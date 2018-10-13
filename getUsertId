@@ -5,21 +5,21 @@ $yandex = $_COOKIE['_ym_uid'];
 $google = $_COOKIE['_ga'];
 
 if (isset($yandex) || isset($google)) {
-    //$hook->setValue('YandexUID', $_COOKIE['yandexuid']);
-    //if (isset($yandex)) {
-        $hook->setValue('YandexUID',$yandex);
-       // $modx->log(xPDO::LOG_LEVEL_DEBUG, 'Хук getClientID: от Яндекса'.$yandex);
-    //} else {
-    //    $modx->log(xPDO::LOG_LEVEL_ERROR, 'Хук getClientID: Нет куки от Яндекса');
-    //}
-    //if (isset($google)) {
+    /* $hook->setValue('YandexUID', $_COOKIE['yandexuid']);
+        if (isset($yandex)) { */
+            $hook->setValue('YandexUID',$yandex);
+       /* $modx->log(xPDO::LOG_LEVEL_DEBUG, 'FormIT hook getUsertId: from Yandex '.$yandex);
+    } else {
+        $modx->log(xPDO::LOG_LEVEL_ERROR, 'FormIT hook getUsertId: No Yandex user id');
+    }
+    if (isset($google)) { */
         $hook->setValue('GoogleUID',$google);
-       // $modx->log(xPDO::LOG_LEVEL_DEBUG, 'Хук getClientID: от Гугла'.$google);
-    //} else {
-    //    $modx->log(xPDO::LOG_LEVEL_ERROR, 'Хук getClientID: Нет куки от Гугла');
-    //}
+       /* $modx->log(xPDO::LOG_LEVEL_DEBUG, 'FormIT hook getUsertId: from Google '.$google);
+        } else {
+            $modx->log(xPDO::LOG_LEVEL_ERROR, 'FormIT hook getUsertId: No google user id');
+        }*/
 
 return true;
  } else {
-    $modx->log(xPDO::LOG_LEVEL_ERROR, 'Хук getClientID: не получил ни каких данных');
+    $modx->log(xPDO::LOG_LEVEL_ERROR, 'FormIT hook getUsertId: nothing data');
   }
